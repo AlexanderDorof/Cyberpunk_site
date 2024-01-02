@@ -1,0 +1,23 @@
+{% extends 'implants/index.html' %}
+
+{% block menu %}
+<a href="{% url 'addnewitem' %}" class="buket" style="display:block"> Добавить предмет </a>
+<div class="clearfix">
+        <div class="sidebar rd_hidden">
+            {% for menu in menus %}
+                <a class="buket" href="{% url 'categories' menu.href %}" >{{ menu.category }}</a>
+            {% endfor %}
+        </div>
+        <div class="cardszone">
+            {% for card in cards %}
+            <a class='card_href' href={{ card.href }}>
+            <div class="card">
+                <h3 class="card-description">{{ card.category }}</h3>
+                <img src="{{ card.photo.url }}" alt="">
+                <p class="card-description">{{ card.description }}</p>
+            </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

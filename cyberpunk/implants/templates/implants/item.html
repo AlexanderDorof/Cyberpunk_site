@@ -1,0 +1,12 @@
+{% extends 'implants/base.html' %}
+
+{% block content %}
+<h3 class='about-us' id='description'>{{ item.category }}</h3>
+<div class='archive_image'><img  src="{{ item.photo.url }}" alt=""></div>
+<p class='description'> {{ item.description }} </p>
+<p class='about-us'>Сочетается с веткой: {{ item.Characteristic }} </p>
+<p class='about-us'>Категория имплантов: {{ item.cyberware_category }} </p>
+<p class='about-us'>Киберъемкость:  {{ item.capacity }} </p>
+<p class='about-us'>Цена: {{ item.price }} </p>
+<div class="buket"> Купить сейчас </div>
+{% endblock %}

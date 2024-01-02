@@ -1,0 +1,10 @@
+{% extends 'implants/base.html' %}
+
+
+{% block content %}
+<form class="description" action="{% url 'addnewitem' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create</button>
+</form>
+{% endblock %}
