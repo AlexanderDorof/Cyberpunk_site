@@ -4,34 +4,37 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('implants', '0006_menu_category_description_and_more'),
+        ("implants", "0006_menu_category_description_and_more"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='cyberware',
-            name='title',
+            model_name="cyberware",
+            name="title",
         ),
         migrations.AddField(
-            model_name='bio_category',
-            name='description',
-            field=models.TextField(default='Some text', max_length=500, verbose_name='Описание'),
+            model_name="bio_category",
+            name="description",
+            field=models.TextField(
+                default="Some text", max_length=500, verbose_name="Описание"
+            ),
         ),
         migrations.AlterField(
-            model_name='bio_category',
-            name='category',
-            field=models.CharField(max_length=25, verbose_name='Название'),
+            model_name="bio_category",
+            name="category",
+            field=models.CharField(max_length=25, verbose_name="Название"),
         ),
         migrations.AlterField(
-            model_name='cyberware',
-            name='description',
-            field=models.TextField(default='Some text', max_length=500, verbose_name='Описание'),
+            model_name="cyberware",
+            name="description",
+            field=models.TextField(
+                default="Some text", max_length=500, verbose_name="Описание"
+            ),
         ),
         migrations.AlterField(
-            model_name='menu_category',
-            name='category',
-            field=models.CharField(max_length=25, verbose_name='Название'),
+            model_name="menu_category",
+            name="category",
+            field=models.CharField(max_length=25, verbose_name="Название"),
         ),
     ]

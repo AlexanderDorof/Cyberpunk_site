@@ -4,19 +4,22 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('implants', '0002_cyberware_year_in_school'),
+        ("implants", "0002_cyberware_year_in_school"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='cyberware',
-            name='year_in_school',
+            model_name="cyberware",
+            name="year_in_school",
         ),
         migrations.AddField(
-            model_name='cyberware',
-            name='Characteristic',
-            field=models.CharField(choices=[('BODY', 'Сила'), ('REFLEX', 'Реакция')], default='BODY', max_length=6),
+            model_name="cyberware",
+            name="Characteristic",
+            field=models.CharField(
+                choices=[("BODY", "Сила"), ("REFLEX", "Реакция")],
+                default="BODY",
+                max_length=6,
+            ),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('implants', '0007_remove_cyberware_title_bio_category_description_and_more'),
+        ("implants", "0007_remove_cyberware_title_bio_category_description_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='cyberware',
-            name='category',
-            field=models.CharField(max_length=25, verbose_name='Название'),
+            model_name="cyberware",
+            name="category",
+            field=models.CharField(max_length=25, verbose_name="Название"),
         ),
     ]

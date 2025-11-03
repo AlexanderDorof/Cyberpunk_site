@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import *
 
+from .models import *
 
 admin.site.register(Menu_category)
 admin.site.register(Cyberware_category)
@@ -11,4 +11,3 @@ admin.site.register(Items_category)
 admin.site.register(Cyberware)
 admin.site.register(Vehicle)
 admin.site.register(Weapon)
-

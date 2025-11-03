@@ -4,20 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('implants', '0005_menu_category_alter_cyberware_title'),
+        ("implants", "0005_menu_category_alter_cyberware_title"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='menu_category',
-            name='description',
-            field=models.TextField(default='Some text', max_length=500, verbose_name='Описание'),
+            model_name="menu_category",
+            name="description",
+            field=models.TextField(
+                default="Some text", max_length=500, verbose_name="Описание"
+            ),
         ),
         migrations.AlterField(
-            model_name='cyberware',
-            name='description',
-            field=models.TextField(default='Some text', max_length=200, verbose_name='Описание'),
+            model_name="cyberware",
+            name="description",
+            field=models.TextField(
+                default="Some text", max_length=200, verbose_name="Описание"
+            ),
         ),
     ]
