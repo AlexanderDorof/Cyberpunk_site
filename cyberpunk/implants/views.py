@@ -8,41 +8,10 @@ def gather_base_context():
     menus = Menu_category.objects.all()
     context = {'menus': menus,
                'shopname': 'CyberShop',
+               'menu_text': 'Назад'
                }
     return context
 
-def create_in_db():
-    import os
-    from bs4 import BeautifulSoup
-    from PIL import Image
-    import random
-
-
-    def save_items(image_file, iter_data, number_id):
-        title, description = next(iter_data)[:-1].split('|')
-        title = title.strip()
-        description = description.strip()
-        img = 'illustration/weapons/' + image_file
-        print(title, description, img)
-        item = Weapon(category=title, description=description, href=number_id,
-                         photo=img, weapon_category=Weapon_category.objects.get(pk=1), is_available=True,
-                         damage=random.randint(2, 20),
-                         load_capacity=random.randint(2, 30),
-                         price=random.randint(10, 100))
-        item.save()
-
-
-
-
-
-    all_img = os.listdir(r'D:\My projects\Python\TeachMeSkills\Django_Cyberpunk\cyberpunk\media\illustration\weapons')
-    with open(r'D:\My projects\Python\Learn_BeautifulSoup\cybweapons\title_description.txt') as file:
-        data = file.readlines()
-    iter_data = iter(data)
-    number_id=200
-    for image_file in all_img:
-        number_id += 1
-        save_items(image_file, iter_data, number_id)
 
 
 
@@ -52,6 +21,7 @@ def index(request):
         'title': 'CyberShop',
     }
     context.update(gather_base_context())
+    context['menu_text'] = 'Открыть меню'
     return render(request, 'implants/index.html', context=context)
 
 
